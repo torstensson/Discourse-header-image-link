@@ -1,0 +1,6 @@
+{
+    "name": "Header image link",
+    "about_url": "https://github.com/torstensson/discourse-header-image-link",
+    "license_url": "https://github.com/torstensson/discourse-header-image-link/blob/master/LICENSE",
+    "component": true
+  }

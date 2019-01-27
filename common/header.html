@@ -1,0 +1,34 @@
+<script type="text/discourse-plugin" version="0.8.20">
+    let customHeaderImageLink = settings.Custom_header_image_link;
+    customHeaderImageLink.split("|").map(i => {
+      let seg = $.map(i.split(","), $.trim),
+        linkText = seg[0],
+        linkTitle = seg[1],
+        linkHref = seg[2],
+        deviceClass = "." + seg[3],
+        linkTarget = seg[4] === "self" ? "" : "_blank",
+        keepOnScrollClass = "keep" === "keep" ? ".keep" : "";
+      api.decorateWidget("title:after", helper => {
+        return helper.h(
+          "li.headerLink" + deviceClass + keepOnScrollClass,
+          helper.h(
+            "a",
+            {
+              href: linkHref,
+              title: linkTitle,
+              target: linkTarget
+            },
+            linkText
+          )
+        );
+      });
+    });
+    api.decorateWidget("home-logo:after", helper => {
+      let titleVisible = helper.attrs.minimized;
+      if (titleVisible) {
+        $(".d-header").addClass("hide-menus");
+      } else {
+        $(".d-header").removeClass("hide-menus");
+      }
+    });
+    </script>
