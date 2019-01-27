@@ -7,8 +7,8 @@
         linkHref = seg[2],
         deviceClass = "." + seg[3],
         linkTarget = seg[4] === "self" ? "" : "_blank",
-        keepOnScrollClass = "keep" === "keep" ? ".keep" : "";
-      api.decorateWidget("title:after", helper => {
+        keepOnScrollClass = "remove" === "keep" ? ".keep" : "";
+      api.decorateWidget("home-logo:after", helper => {
         return helper.h(
           "li.headerLink" + deviceClass + keepOnScrollClass,
           helper.h(
