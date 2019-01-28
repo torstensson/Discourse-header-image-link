@@ -2,7 +2,7 @@
     let customHeaderImageLink = settings.Custom_header_image_link;
     customHeaderImageLink.split("|").map(i => {
       let seg = $.map(i.split(","), $.trim),
-        linkText = seg[0],
+        linkImageURL = seg[0],
         linkTitle = seg[1],
         linkHref = seg[2],
         deviceClass = "." + seg[3],
@@ -20,7 +20,7 @@
               target: linkTarget
             },[
             helper.h('img.header-image-link', {
-                src:'linkText'
+                src:linkImageURL
             })    
             ])
         );
