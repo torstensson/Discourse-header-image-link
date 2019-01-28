@@ -9,6 +9,11 @@
   }
 }
 
+.headerImageLink {
+    height: 2.57em;
+    width: auto;
+}
+
 .d-header {
   &.hide-menus {
     .headerLink:not(.keep) {
